@@ -5,64 +5,12 @@ import ProductCard from "@/components/ProductCard";
 import FloatingChat from "@/components/FloatingChat";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import products from "@/data/products.json";
 
 const Necklaces = () => {
   const [sortBy, setSortBy] = useState("featured");
 
-  const necklaceProducts = [
-    {
-      id: "n1",
-      name: "Rose Gold Heart Pendant Necklace",
-      price: 24.99,
-      originalPrice: 34.99,
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 127,
-      badge: "Best Seller" as const
-    },
-    {
-      id: "n2",
-      name: "Delicate Gold Chain Necklace",
-      price: 18.99,
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 89,
-    },
-    {
-      id: "n3",
-      name: "Layered Chain Set",
-      price: 22.99,
-      image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 156,
-      badge: "Just Dropped" as const
-    },
-    {
-      id: "n4",
-      name: "Pearl Drop Necklace",
-      price: 16.99,
-      image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 203,
-    },
-    {
-      id: "n5",
-      name: "Minimalist Bar Necklace",
-      price: 12.99,
-      image: "https://images.unsplash.com/photo-1596944946061-c8c1c4e56e12?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 92,
-      badge: "Under £10" as const
-    },
-    {
-      id: "n6",
-      name: "Crystal Pendant Necklace",
-      price: 28.99,
-      image: "https://images.unsplash.com/photo-1608234808654-2a8875faa6fd?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 74,
-    }
-  ];
+  const necklaceProducts = products.necklaces;
 
   const subcategories = [
     { id: "all", name: "All Necklaces", count: necklaceProducts.length },

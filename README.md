@@ -64,6 +64,12 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/77af5fe5-9ca3-4007-8a04-269c50682949) and click on Share -> Publish.
 
+## Packaging for Shopify
+
+Run `npm run package:theme` to build the site and create `shopify_theme.zip`.
+Upload this zip file to Shopify as a theme. Products can be exported with
+`npm run export:shopify` which generates `shopify_products.csv`.
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

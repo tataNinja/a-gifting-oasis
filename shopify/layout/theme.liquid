@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page_title }}</title>
+    {{ content_for_header }}
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+    <script src="{{ 'bundle.js' | asset_url }}" defer></script>
+  </head>
+  <body>
+    {{ content_for_layout }}
+    <div id="root"></div>
+  </body>
+</html>

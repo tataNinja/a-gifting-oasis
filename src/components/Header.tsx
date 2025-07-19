@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Search, Heart, ShoppingBag, Menu, X, User } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -58,15 +59,17 @@ const Header = () => {
             <div className="flex flex-col space-y-4 mt-8">
               {navItems.map((item) => (
                 <div key={item.title} className="space-y-2">
-                  <h3 className="font-medium text-primary">{item.title}</h3>
+                  <Link to={item.href} className="font-medium text-primary hover:text-primary/80">
+                    {item.title}
+                  </Link>
                   {item.items.map((subItem) => (
-                    <Button
+                    <Link
                       key={subItem}
-                      variant="ghost"
-                      className="w-full justify-start text-sm"
+                      to={`${item.href}?category=${subItem.toLowerCase()}`}
+                      className="block w-full text-left text-sm text-muted-foreground hover:text-foreground py-1"
                     >
                       {subItem}
-                    </Button>
+                    </Link>
                   ))}
                 </div>
               ))}
@@ -75,9 +78,9 @@ const Header = () => {
         </Sheet>
 
         {/* Logo */}
-        <div className="flex items-center space-x-2 mr-6">
+        <Link to="/" className="flex items-center space-x-2 mr-6">
           <img src={logo} alt="GARMÉA" className="h-8 w-auto" />
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex">
@@ -92,11 +95,14 @@ const Header = () => {
                     {item.items.map((subItem) => (
                       <NavigationMenuLink
                         key={subItem}
+                        asChild
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                       >
-                        <div className="text-sm font-medium leading-none">
-                          {subItem}
-                        </div>
+                        <Link to={`${item.href}?category=${subItem.toLowerCase()}`}>
+                          <div className="text-sm font-medium leading-none">
+                            {subItem}
+                          </div>
+                        </Link>
                       </NavigationMenuLink>
                     ))}
                   </div>

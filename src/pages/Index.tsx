@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import PromoBar from "@/components/PromoBar";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import BestSellers from "@/components/BestSellers";
+import Categories from "@/components/Categories";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Reviews from "@/components/Reviews";
+import Newsletter from "@/components/Newsletter";
+import Footer from "@/components/Footer";
+import FloatingChat from "@/components/FloatingChat";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <PromoBar />
+      <Header />
+      <Hero />
+      <BestSellers />
+      <Categories />
+      <WhyChooseUs />
+      <Reviews />
+      <Newsletter />
+      <Footer />
+      <FloatingChat />
     </div>
   );
 };

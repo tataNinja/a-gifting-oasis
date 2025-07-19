@@ -6,65 +6,12 @@ import FloatingChat from "@/components/FloatingChat";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Gift, Heart } from "lucide-react";
+import products from "@/data/products.json";
 
 const Gifts = () => {
   const [sortBy, setSortBy] = useState("featured");
 
-  const giftProducts = [
-    {
-      id: "g1",
-      name: "Personalized Initial Necklace",
-      price: 22.99,
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 89,
-      badge: "Best Seller" as const
-    },
-    {
-      id: "g2",
-      name: "Couple's Matching Keychains",
-      price: 9.99,
-      image: "https://images.unsplash.com/photo-1565728744382-61accd4aa148?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 156,
-      badge: "Under £10" as const
-    },
-    {
-      id: "g3",
-      name: "Gift Set - Necklace & Earrings",
-      price: 34.99,
-      originalPrice: 44.99,
-      image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 203,
-      badge: "Just Dropped" as const
-    },
-    {
-      id: "g4",
-      name: "Men's Leather Bracelet",
-      price: 18.99,
-      image: "https://images.unsplash.com/photo-1603561593037-13caf1bf66df?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 127,
-    },
-    {
-      id: "g5",
-      name: "Friendship Bracelet Duo",
-      price: 12.99,
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 74,
-      badge: "Under £10" as const
-    },
-    {
-      id: "g6",
-      name: "Engraved Photo Locket",
-      price: 28.99,
-      image: "https://images.unsplash.com/photo-1608234808654-2a8875faa6fd?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 92,
-    }
-  ];
+  const giftProducts = products.gifts;
 
   const subcategories = [
     { id: "all", name: "All Gifts", count: giftProducts.length },

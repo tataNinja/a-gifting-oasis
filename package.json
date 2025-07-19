@@ -9,8 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "export:shopify": "node scripts/export-shopify-csv.cjs",
-    "package:theme": "node scripts/export-shopify-theme.cjs"
+
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

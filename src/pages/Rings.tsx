@@ -5,64 +5,12 @@ import ProductCard from "@/components/ProductCard";
 import FloatingChat from "@/components/FloatingChat";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import products from "@/data/products.json";
 
 const Rings = () => {
   const [sortBy, setSortBy] = useState("featured");
 
-  const ringProducts = [
-    {
-      id: "r1",
-      name: "Infinity Promise Ring",
-      price: 19.99,
-      originalPrice: 29.99,
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 156,
-      badge: "Best Seller" as const
-    },
-    {
-      id: "r2",
-      name: "Rose Gold Stackable Ring Set",
-      price: 24.99,
-      image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 89,
-    },
-    {
-      id: "r3",
-      name: "Minimalist Band Ring",
-      price: 14.99,
-      image: "https://images.unsplash.com/photo-1543295606-8188b8ee6b53?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 203,
-      badge: "Under £10" as const
-    },
-    {
-      id: "r4",
-      name: "Crystal Solitaire Ring",
-      price: 32.99,
-      image: "https://images.unsplash.com/photo-1603561596112-db532d74f2bc?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 127,
-    },
-    {
-      id: "r5",
-      name: "Vintage Style Ring",
-      price: 26.99,
-      image: "https://images.unsplash.com/photo-1603561593853-8b8048e7f863?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 74,
-      badge: "Just Dropped" as const
-    },
-    {
-      id: "r6",
-      name: "Pearl Accent Ring",
-      price: 22.99,
-      image: "https://images.unsplash.com/photo-1603561596559-ba2ced7c0b31?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 92,
-    }
-  ];
+  const ringProducts = products.rings;
 
   const subcategories = [
     { id: "all", name: "All Rings", count: ringProducts.length },

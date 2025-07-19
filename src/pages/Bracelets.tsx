@@ -5,64 +5,12 @@ import ProductCard from "@/components/ProductCard";
 import FloatingChat from "@/components/FloatingChat";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import products from "@/data/products.json";
 
 const Bracelets = () => {
   const [sortBy, setSortBy] = useState("featured");
 
-  const braceletProducts = [
-    {
-      id: "b1",
-      name: "Delicate Chain Bracelet Set",
-      price: 18.99,
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 89,
-      badge: "Best Seller" as const
-    },
-    {
-      id: "b2",
-      name: "Rose Gold Charm Bracelet",
-      price: 26.99,
-      originalPrice: 36.99,
-      image: "https://images.unsplash.com/photo-1594736797933-d0eb8ba2fe65?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 156,
-    },
-    {
-      id: "b3",
-      name: "Tennis Bracelet",
-      price: 34.99,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 203,
-      badge: "Just Dropped" as const
-    },
-    {
-      id: "b4",
-      name: "Friendship Bracelet Set",
-      price: 8.99,
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 127,
-      badge: "Under £10" as const
-    },
-    {
-      id: "b5",
-      name: "Crystal Bangle",
-      price: 22.99,
-      image: "https://images.unsplash.com/photo-1603561593407-90d2e427bf13?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 74,
-    },
-    {
-      id: "b6",
-      name: "Leather Wrap Bracelet",
-      price: 16.99,
-      image: "https://images.unsplash.com/photo-1603561593037-13caf1bf66df?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 92,
-    }
-  ];
+  const braceletProducts = products.bracelets;
 
   const subcategories = [
     { id: "all", name: "All Bracelets", count: braceletProducts.length },

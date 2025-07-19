@@ -5,64 +5,12 @@ import ProductCard from "@/components/ProductCard";
 import FloatingChat from "@/components/FloatingChat";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import products from "@/data/products.json";
 
 const Earrings = () => {
   const [sortBy, setSortBy] = useState("featured");
 
-  const earringProducts = [
-    {
-      id: "e1",
-      name: "Minimalist Pearl Earrings",
-      price: 12.99,
-      image: "https://images.unsplash.com/photo-1588444650238-7221a7d8b6f3?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 203,
-      badge: "Under £10" as const
-    },
-    {
-      id: "e2",
-      name: "Rose Gold Hoop Earrings",
-      price: 21.99,
-      originalPrice: 31.99,
-      image: "https://images.unsplash.com/photo-1595721871319-64b4c86fc2d1?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 156,
-      badge: "Best Seller" as const
-    },
-    {
-      id: "e3",
-      name: "Crystal Drop Earrings",
-      price: 24.99,
-      image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 89,
-      badge: "Just Dropped" as const
-    },
-    {
-      id: "e4",
-      name: "Ear Climber Set",
-      price: 18.99,
-      image: "https://images.unsplash.com/photo-1616791180964-a1c9e1a99c34?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 127,
-    },
-    {
-      id: "e5",
-      name: "Vintage Style Studs",
-      price: 16.99,
-      image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=500&h=500&fit=crop",
-      rating: 5,
-      reviews: 74,
-    },
-    {
-      id: "e6",
-      name: "Statement Chandelier Earrings",
-      price: 29.99,
-      image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500&h=500&fit=crop",
-      rating: 4,
-      reviews: 92,
-    }
-  ];
+  const earringProducts = products.earrings;
 
   const subcategories = [
     { id: "all", name: "All Earrings", count: earringProducts.length },

@@ -10,6 +10,13 @@ const distDir = path.join(root, 'dist');
 // Build the React app
 execSync('npm run build', { stdio: 'inherit' });
 
+// Read generated filenames from dist/index.html
+const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
+const jsMatch = indexHtml.match(/assets\/(.*?\.js)/);
+const cssMatch = indexHtml.match(/assets\/(.*?\.css)/);
+const jsFile = jsMatch ? jsMatch[1] : null;
+const cssFile = cssMatch ? cssMatch[1] : null;
+
 // Clean previous build
 fs.rmSync(themeDir, { recursive: true, force: true });
 fs.mkdirSync(themeDir, { recursive: true });
@@ -31,6 +38,23 @@ function copyRecursive(src, dest) {
 copyRecursive(shopifyDir, themeDir);
 // Copy built assets
 copyRecursive(path.join(distDir, 'assets'), path.join(themeDir, 'assets'));
+
+// Rename hashed JS and CSS to fixed filenames
+if (jsFile) {
+  const srcJs = path.join(themeDir, 'assets', jsFile);
+  const destJs = path.join(themeDir, 'assets', 'bundle.js');
+  if (fs.existsSync(srcJs)) {
+    fs.renameSync(srcJs, destJs);
+  }
+}
+
+if (cssFile) {
+  const srcCss = path.join(themeDir, 'assets', cssFile);
+  const destCss = path.join(themeDir, 'assets', 'style.css');
+  if (fs.existsSync(srcCss)) {
+    fs.renameSync(srcCss, destCss);
+  }
+}
 
 // Zip
 const zip = require('bestzip');
